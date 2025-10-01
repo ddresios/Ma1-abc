@@ -26,6 +26,28 @@
 \item
 Prove that $x + \frac 1x \geq 2$ for all $x > 0$ and use this result to show that $\frac{a+b}{2} \geq \sqrt{ab}$ for all $a, b > 0$.
 
+\bigskip 
+\textbf{Proof: } First show that $x + \frac 1x \geq 2$ for all $x > 0$. Start by multiplying both sides of the inequality by $x$, which is ok because we only care about $x\geq 0$ and don't have to worry about sign switching or multiplying by a negative number: 
+\[x^2 + 1 \geq 2x\]
+Subtract $2x$ from both sides: 
+\[x^2 -2x + 1 \geq 0 \]
+Now let's find the minimum value of the left side of the inequality. Take the derivative and set it equal to zero: 
+\[\tfrac{d}{dx} (x^2-2x+1 )= 2x -2 = 0 \]
+\[2x = 2 \]
+\[x = 1 \]
+Thus we know that the minimum value of $x^2 - 2x + 1$ occurs at $x = 1$. Plug in $x = 1$ to the inequality to find the minimum value: 
+\[(1)^2 - 2(1) +1 \geq 0 \]
+\[ 1 - 2 + 1 \geq 0\]
+\[0 \geq 0 \]
+Which is true. Thus, because we know that the left side of the inequality is greater than or equal to $0$ at its minumum, then we can infer that the left side of the inequality is greater than or equal to $0$ at every value of $x$ and conclude that the inequality is true. 
+
+\medskip
+
+Now move on to the statement $\frac{a+b}{2} \geq \sqrt{ab}$ for all $a, b > 0$. Square both sides of the inequality: 
+\[\frac{(a+b)^2}{4} \geq ab \]
+
+
+
 \item
 Prove that $\sqrt{10}$ is irrational and deduce that $\sqrt{2} + \sqrt{5}$ is also irrational.
 
