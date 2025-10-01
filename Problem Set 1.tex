@@ -100,14 +100,32 @@ First examine the base case $n = 1$. Then,
 
 Now assume that $\sum_{k=1}^n k^3 = \left(\sum_{k=1}^n k\right)^2$ and show that the $n+1$ case holds true: 
 \[ \sum_{k=1}^{n+1} k^3 = \left(\sum_{k=1}^{n+1} k\right)^2 \]
-\[ \sum_{k=1}^{n} k^3 + (n+1)^3\]
-%left off halfway thru this is dumb shenanigans I'll consult arpit
+Seperate the last term of each series:
+\[ \sum_{k=1}^{n} k^3 + (n+1)^3 = \left(\sum_{k=1}^n k + (n+1)\right)^2\]
+Apply the inductive hypothesis: 
+\[ \left(\sum_{k=1}^n k\right)^2 + (n+1)^3 = \left(\sum_{k=1}^n k + (n+1)\right)^2\]
+Do binomial expansion on the right side:
+\[ \left(\sum_{k=1}^n k\right)^2 + (n+1)^3 = \left( \sum_{k=1}^n k\right)^2 + 2\left( \sum_{k=1}^{n} k\right)(n+1) + (n+1)^2\]
+Subtract $\left(\sum_{k=1}^n k\right)^2$ from both sides:
+\[ (n+1)^3 = 2\left( \sum_{k=1}^{n} k\right)(n+1) + (n+1)^2\]
+Follow in the footsteps of 10 year old Gauss and recognize that $\sum_{k=1}^{n} k = \frac{n(n+1)}{2}$:
+\[ (n+1)^3 = 2(\frac{n(n+1)}{2})(n+1) + (n+1)^2\]
+Now for some algebra:
+\[ n^3 + 3n^2 +3n + 1 = n(n+1)(n+1)+ n^2 + 2n + 1 \]
+\[ n^3 + 3n^2 +3n + 1 = (n^2+n)(n+1) + n^2 + 2n + 1\]
+\[ n^3 + 3n^2 +3n + 1 = n^3 + n^2 + n^2 + n + n^2 + 2n + 1\]
+\[ n^3 + 3n^2 +3n + 1 = n^3 + 3n^2 + 3n + 1\] 
+And therefore the inductive case is proven. Because the base case and the inductive case are proven, the statement $\sum_{k=1}^n k^3 = \left(\sum_{k=1}^n k\right)^2$ is proven for all $n \geq 1$.
+
+\rightline{$\Box$}
 \item
 Each card in a pack has a number on one side and a letter on the other. Four cards are
 placed on the table:
 \[ \boxed{2} \; \boxed{3} \; \boxed{A} \; \boxed{B}\]
 You are permitted to turn just two cards in order to test the following hypothesis: a card that
 has an even number on one side has a vowel on the other. Which two cards should you turn and why? 
+
+\bigskip\textbf{Answer: } You only care about the statement that if a card has an even number on one side, then it has a vowel on the other. You don't care about what the card with 3 on one side has, for instance, because it doesn't have an even number on one side. Even if it ended up having a vowel on the other side, it would not invalidate our claim because it is not an ``iff" claim. Same goes for the card with the $B$ on the back, because we know it does not have a vowel on one side. There are only two cards that the hypothesis concerns: the card that has the even number $2$ on one side and the card that has the vowel $A$ on one side. We can use our two card turns to check these two cards and confirm or reject our hypothesis. 
 
 \item
 Which of the following relations on $\mathbb{N}$ are reflexive, which are symmetric and which are transitive:
