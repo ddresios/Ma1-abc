@@ -45,15 +45,63 @@ Which is true. Thus, because we know that the left side of the inequality is gre
 
 Now move on to the statement $\frac{a+b}{2} \geq \sqrt{ab}$ for all $a, b > 0$. Square both sides of the inequality: 
 \[\frac{(a+b)^2}{4} \geq ab \]
+Expand the top of the left side of the inequality: 
+\[\frac{a^2 + 2ab + b^2}{4} \geq ab \]
+Multiply both sides by 4: 
+\[a^2 + 2ab + b^2 \geq 4ab\]
+Subtract $2ab$ from both sides:
+\[ a^2 + b^2 \geq 2ab\]
+Divide both sides by $2ab$ ($a$ and $b$ are given to be always positive so no inequality sign switching takes place):
+\[\frac{a^2 + b^2}{ab} \geq 2 \]
+Split the fraction apart and simplify:
+\[\frac{a^2}{ab} + \frac{b^2}{ab} \geq 2\]
+\[\frac{a}{b}+ \frac{b}{a} \geq 2 \]
+Plug in $x = \frac{a}{b}$:
+\[x + \frac{1}{x} \geq 2 \] 
+Which we know is true from the first part of this question. Thus, the statement $\frac{a+b}{2} \geq \sqrt{ab}$ for all $a, b > 0$ is true. 
 
-
+\bigskip
+\rightline{$\Box$}
 
 \item
 Prove that $\sqrt{10}$ is irrational and deduce that $\sqrt{2} + \sqrt{5}$ is also irrational.
 
+\bigskip 
+\textbf{Proof: } First prove that $\sqrt{10}$ is irrational. This will be a proof by contradiction. Assume to the contrary that $\sqrt{10}$ is rational and can be represented by an irreducible $\frac{p}{q}$ for $p,q \in \mathbb{Z}$, where $p$ and $q$ share no common factors. Then, 
+\[\sqrt{10} = \frac{p}{q} \]
+\[10 = \frac{p^2}{q^2}\]
+\[p^2 = 10q^2 \]
+ Note that if $p^2$ is a multiple of $10$, then $p$ is a multiple of $10$. Because $p$ is a multiple of 10, rewrite it as $10p_1, p_1 \in \mathbb{Z}$: 
+\[100p_1 ^2 = 10 q^2\]
+\[10p_1^2 = q^2   \]
+Note that if $q^2$ is a multiple of $10$, then $q$ is also a multiple of $10$. Thus, both $p$ and $q$ share the common factor of $10$.
+However, this is a contradiction, because we initially assumed that $p$ and $q$ shared no common factor. Thus, $\sqrt{10}$ cannot be rational and must instead be irrational. 
+
+Now deduce that $\sqrt{2} + \sqrt{5}$ is also irrational. Assume to the contrary that $\sqrt{2} + \sqrt{5}$ is rational. Then, 
+\[(\sqrt{2} + \sqrt{5})^2  = 2 + 2(\sqrt{2})(\sqrt{5}) + 5 = \]
+\[ = 7 + 2\sqrt{10}\]
+Let this supposedly rational number be represented by $q \in \mathbb{Q}$:
+\[q = 7 + 2\sqrt{10}\]
+Rearrange:
+\[\frac{q-7}{2} = \sqrt{10}\]
+However, $\frac{q-7}{2}$ should be rational because every number in it is rational, which creates a contradiction because we just showed that $\sqrt{10}$ is irrational. Thus, $\sqrt{2} + \sqrt{5}$ is also irrational.
+
+\bigskip
+\rightline{$\Box$}
 \item
 Prove, by induction or otherwise, that $\sum_{k=1}^n k^3 = \left(\sum_{k=1}^n k\right)^2$.
 
+\bigskip\textbf{Proof: }
+
+First examine the base case $n = 1$. Then, 
+\[ \sum_{k=1}^1 k^3 = \left(\sum_{k=1}^1 k\right)^2 \]
+\[ 1^3 = 1^2\]
+\[ 1= 1\]
+
+Now assume that $\sum_{k=1}^n k^3 = \left(\sum_{k=1}^n k\right)^2$ and show that the $n+1$ case holds true: 
+\[ \sum_{k=1}^{n+1} k^3 = \left(\sum_{k=1}^{n+1} k\right)^2 \]
+\[ \sum_{k=1}^{n} k^3 + (n+1)^3\]
+%left off halfway thru this is dumb shenanigans I'll consult arpit
 \item
 Each card in a pack has a number on one side and a letter on the other. Four cards are
 placed on the table:
