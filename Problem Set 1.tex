@@ -71,10 +71,10 @@ Prove that $\sqrt{10}$ is irrational and deduce that $\sqrt{2} + \sqrt{5}$ is al
 \[\sqrt{10} = \frac{p}{q} \]
 \[10 = \frac{p^2}{q^2}\]
 \[p^2 = 10q^2 \]
- Note that if $p^2$ is a multiple of $10$, then $p$ is a multiple of $10$. Because $p$ is a multiple of 10, rewrite it as $10p_1, p_1 \in \mathbb{Z}$: 
+ Note that if $p^2$ is a multiple of $10$, then $p$ is a multiple of $10$. This is because the prime factorization of $10$ is $2$ and $5$, both of which are prime numbers and not squares. Because $p$ is a multiple of 10, rewrite it as $10p_1, p_1 \in \mathbb{Z}$: 
 \[100p_1 ^2 = 10 q^2\]
 \[10p_1^2 = q^2   \]
-Note that if $q^2$ is a multiple of $10$, then $q$ is also a multiple of $10$. Thus, both $p$ and $q$ share the common factor of $10$.
+Note that if $q^2$ is a multiple of $10$, then $q$ is also a multiple of $10$ and discussed above. Thus, both $p$ and $q$ share the common factor of $10$.
 However, this is a contradiction, because we initially assumed that $p$ and $q$ shared no common factor. Thus, $\sqrt{10}$ cannot be rational and must instead be irrational. 
 
 Now deduce that $\sqrt{2} + \sqrt{5}$ is also irrational. Assume to the contrary that $\sqrt{2} + \sqrt{5}$ is rational. Then, 
@@ -108,7 +108,10 @@ Do binomial expansion on the right side:
 \[ \left(\sum_{k=1}^n k\right)^2 + (n+1)^3 = \left( \sum_{k=1}^n k\right)^2 + 2\left( \sum_{k=1}^{n} k\right)(n+1) + (n+1)^2\]
 Subtract $\left(\sum_{k=1}^n k\right)^2$ from both sides:
 \[ (n+1)^3 = 2\left( \sum_{k=1}^{n} k\right)(n+1) + (n+1)^2\]
-Follow in the footsteps of 10 year old Gauss and recognize that $\sum_{k=1}^{n} k = \frac{n(n+1)}{2}$:
+Side note: We're going to follow in the footsteps of 10 year old Gauss and recognize that $\sum_{k=1}^{n} k = \frac{n(n+1)}{2}$:
+
+\[\sum_{k=1}^{n} k = (1+2+...+n) = (1+n)+(2+(n-1))+ (3+(n-2))...  = \frac{n}{2}(n+1) \]
+Apply this to our previous progress:
 \[ (n+1)^3 = 2(\frac{n(n+1)}{2})(n+1) + (n+1)^2\]
 Now for some algebra:
 \[ n^3 + 3n^2 +3n + 1 = n(n+1)(n+1)+ n^2 + 2n + 1 \]
@@ -125,7 +128,7 @@ placed on the table:
 You are permitted to turn just two cards in order to test the following hypothesis: a card that
 has an even number on one side has a vowel on the other. Which two cards should you turn and why? 
 
-\bigskip\textbf{Answer: } You only care about the statement that if a card has an even number on one side, then it has a vowel on the other. You don't care about what the card with 3 on one side has, for instance, because it doesn't have an even number on one side. Even if it ended up having a vowel on the other side, it would not invalidate our claim because it is not an ``iff" claim. Same goes for the card with the $B$ on the back, because we know it does not have a vowel on one side. There are only two cards that the hypothesis concerns: the card that has the even number $2$ on one side and the card that has the vowel $A$ on one side. We can use our two card turns to check these two cards and confirm or reject our hypothesis. 
+\bigskip\textbf{Answer: } You only care about the statement that if a card has an even number on one side, then it has a vowel on the other. You don't care about what the card with 3 on one side has, for instance, because it doesn't have an even number on one side. Even if it ended up having a vowel on the other side, it would not invalidate our claim because it is not an ``iff" claim. Same goes for the card with the $A$ on the back, because we are not evaluating the claim ``If there is a vowel on one side, the other side is even''. There are only two cards that the hypothesis concerns: the card that has the even number $2$ on one side and the card that has the letter $B$ on one side. We care about the $B$ card beacuse it allows us to test the contrapositive to the hypothesis (which is logically equivalent), ``If there is not a vowel on the card, then there is not an even number on the back". We can use our two card turns to check these two cards and confirm or reject our hypothesis. 
 
 \item
 Which of the following relations on $\mathbb{N}$ are reflexive, which are symmetric and which are transitive:
