@@ -108,10 +108,19 @@ Do binomial expansion on the right side:
 \[ \left(\sum_{k=1}^n k\right)^2 + (n+1)^3 = \left( \sum_{k=1}^n k\right)^2 + 2\left( \sum_{k=1}^{n} k\right)(n+1) + (n+1)^2\]
 Subtract $\left(\sum_{k=1}^n k\right)^2$ from both sides:
 \[ (n+1)^3 = 2\left( \sum_{k=1}^{n} k\right)(n+1) + (n+1)^2\]
-Side note: We're going to follow in the footsteps of 10 year old Gauss and recognize that $\sum_{k=1}^{n} k = \frac{n(n+1)}{2}$:
+Side note: We're going to follow in the footsteps of 10 year old Gauss and prove that $\sum_{k=1}^{n} k = \frac{n(n+1)}{2}$. First prove the base case $n=1$:
 
-\[\sum_{k=1}^{n} k = (1+2+...+n) = (1+n)+(2+(n-1))+ (3+(n-2))...  = \frac{n}{2}(n+1) \]
-Apply this to our previous progress:
+\[\sum_{k=1}^{1} k =  \frac{1(1+1)}{2} \Rightarrow 1 = 1\]
+Now prove the inductive step. Assume that $\sum_{k=1}^{n} k = \frac{n(n+1)}{2}$ and prove that $\sum_{k=1}^{n+1} k = \frac{(n+1)(n+2)}{2}$: 
+\[ \sum_{k=1}^{n+1} k = \frac{(n+1)(n+2)}{2} \]
+\[ \sum_{k=1}^{n} k + (n+1) = \frac{(n+1)(n+2)}{2} \]
+Apply the inductive hypothesis:
+\[ \frac{n(n+1)}{2} + (n+1) = \frac{(n+1)(n+2)}{2} \]
+\[ \frac{n^2 + n + 2n + 2}{2}= \frac{n^2 + 3n + 2}{2}\]
+\[ \frac{n^2 + 3n + 2}{2} = \frac{n^2 + 3n + 2}{2}\]
+And thus we have proven through induction that $\sum_{k=1}^{n} k = \frac{n(n+1)}{2}$. 
+
+Ok now back to the original problem. Apply the $\frac{n(n+1)}{2}$ identity+ to our previous progress:
 \[ (n+1)^3 = 2(\frac{n(n+1)}{2})(n+1) + (n+1)^2\]
 Now for some algebra:
 \[ n^3 + 3n^2 +3n + 1 = n(n+1)(n+1)+ n^2 + 2n + 1 \]
@@ -134,9 +143,46 @@ has an even number on one side has a vowel on the other. Which two cards should 
 Which of the following relations on $\mathbb{N}$ are reflexive, which are symmetric and which are transitive:
 \begin{itemize}
 \item[(i)] $a \mid b$ (`$a$ divides $b$'),
+
+\bigskip
+For $a \mid b$, then there exists an integer $k$ such that $ka = b$.
+
+\medskip
+$a = 1a$, so $a \mid a$, so $\mid$ is reflexive. 
+
+\medskip 
+However, $\mid$ is not symmetric. Counterexample: $4$ divides $8$ but $8$ does not divide $4$. 
+
+\medskip $\mid$ is transitive. Proof: if $a \mid b$, then $b = ka, k\in \mathbb{N}$. If $b \mid c$, then $c = pb, p\in\mathbb{N}$. Then, $c = pb = pka$. Thus, $a \mid c$. 
 \item[(ii)] $a \nmid b$ (`$a$ does not divide $b$'),
+
+\bigskip $\nmid$ is not reflexive, because we have already shown above that $a \mid a$, so it cannot be the case that $a \nmid a$.
+
+\medskip 
+$\nmid$ is not symmetric. For instance, $8 \nmid 4$ but $4 \mid 8$. 
+
+\medskip 
+$\nmid $ is not transitive. For instance, $3 \nmid 5$ and $5\nmid 9$ but $3 \mid 9$. 
+
+
 \item[(iii)] $a$ and $b$ have the same remainder after division by $2025$,
+
+\bigskip
+Having the same remainder is reflexive. $a\mod 2025 = a\mod 2025$.
+
+\medskip
+Having the same remainder after division by 2025 is symmetric. If $a \mod 2025 = b \mod 2025$, then $b \mod 2025 = a \mod 2025$.
+
+\medskip
+Having the same remainder after division by 2025 is transitive. If $a \mod 2025 = b \mod 2025$, and $b \mod 2025 = c \mod 2025$, then $a \mod 2025 = c \mod 2025$.
 \item[(iv)] gcd$(a, b) > 2025$?
+
+\bigskip
+If this statement were reflexive, then $\gcd(a,a)$ would be greater than 2025. Counterexample: When $a = 2$, $\gcd(2,2) = 2 \leq 2025$. 
+
+If this statement were symmetric, then when $\gcd(a,b) > 2025$, $\gcd(b,a) > 2025$. This is true because $\gcd(a,b) = \gcd(b,a)$. 
+
+If this statement were transitive, then if $\gcd(a,b) > 2025 $ and $\gcd(b,c) > 2025$ then $\gcd(a,c) > 2025$. This is disproven by the counterexample of $a = 2027, b = 2029*2027, c = 2029$. $\gcd(a,b) = 2027 > 2025, \gcd(b,c) = 2029 > 2027, $but$ \gcd(a,c) = 1 \leq 2025$. Thus this statement is not transitive. Note that $2027$ and $2029$ are prime numbers.
 \end{itemize}
 
 \end{enumerate}
