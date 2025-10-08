@@ -1,0 +1,55 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsfonts,amsmath,amssymb,latexsym,color,epsfig}
+\setlength{\textheight}{22.5cm} \setlength{\textwidth}{6.7in}
+\setlength{\topmargin}{0pt} \setlength{\evensidemargin}{1pt}
+\setlength{\oddsidemargin}{1pt} \setlength{\headsep}{10pt}
+\setlength{\parskip}{1mm} \setlength{\parindent}{0mm}
+\renewcommand{\baselinestretch}{1.03}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{conjecture}{Conjecture}
+\newenvironment{proof}[1]
+      {\medskip\noindent{\bf Proof #1}\hspace{1mm}}
+      {\hfill$\Box$\medskip}
+
+
+\title{\vspace{-0.7cm}Ma 1A - Problem Set 2}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+
+\item
+For each of the following sets, decide whether they have each of a supremum, an infimum, a maximum or a minimum:
+\begin{itemize}
+\item[(a)] $\mathbb{Q} \cap [1, \sqrt{2}]$;
+\item[(b)] $\{(-1)^n + 1/n : n \in \mathbb{N}\}$;
+\item[(c)] $\cup_{n=1}^\infty [\frac{1}{2n}, \frac{1}{2n-1}]$.
+\end{itemize}
+
+\item
+Suppose that $S$ and $T$ are nonempty subsets of $\mathbb{R}$ which are bounded above. Prove that $S \cup T$ is bounded above and $\sup (S\cup T) = \max(\sup S, \, \sup T)$.
+
+\item
+Prove that there exists a unique real number $a$ such that $a^3 = 2$.
+
+\item
+Show that each of the following sequences $(a_n)_{n=1}^\infty$ converges to $0$:
+\begin{itemize}
+\item[(a)] $\frac{n+1}{n^2 + 1}$;
+\item[(b)] $2^{-n} \sin(n^3)$;
+\item[(c)] $\sqrt{n} - \sqrt{n-1}$.
+\end{itemize}
+
+
+\item
+Prove or disprove that if $(a_n)_{n=1}^\infty$ is a sequence such that the subsequence $(a_{kn})_{n=1}^\infty$ converges for each $k = 2, 3, \dots$, then $(a_n)_{n=1}^\infty$ also converges.
+
+\end{enumerate}
+
+
+\end{document}
