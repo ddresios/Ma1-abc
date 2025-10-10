@@ -43,10 +43,25 @@ This set will have a maximum at $n = 1$, but has no minimum. The set itself conv
 \item
 Suppose that $S$ and $T$ are nonempty subsets of $\mathbb{R}$ which are bounded above. Prove that $S \cup T$ is bounded above and $\sup (S\cup T) = \max(\sup S, \, \sup T)$.
 
+\bigskip
+\textbf{Proof: } First prove that $S \cup T$ is bounded above. If $S$ and $T$ are both bounded above, then suprema $sup(S) \in S$ and $sup(T) \in T$ both exist. Because they each exist in $S$ and $T$ respectively, both suprema exist in $S \cup T$. Call the max(sup($S$), sup($T$)) $B$. 
 
+\medskip
+Now consider a number $x \in S\cup T$. If $x \in S$, then $x \leq $ sup($S$) $\leq B$. If $x \in T$, then $x \leq $ sup($T$) $\leq B$. In any case, we see that $x \leq B$, so $B$ is an upper bound of $S\cup T$. 
+
+\medskip Now prove that $\sup (S\cup T) = \max(\sup S, \, \sup T)$. Let $ C $ be an upper bound for $S\cup T$. This means that $C$ is also an upper bound for $S$ and $T$ individually. Then, by the definition of supremum, sup($S$) $\leq C$ and sup($T$) $\leq C$. Therefore, $B \leq U$, so $B$ is the least upper bound of $S\cup T$ and is the supremum of this set. 
+
+\bigskip
+\rightline{$\Box$}
 
 \item
-Prove that there exists a unique real number $a$ such that $a^3 = 2$.
+Prove that there exists a unique real number $a$ such that $a^3 = 2$. 
+
+\bigskip
+\textbf{Proof: } Let $S$ be the set $\{q \in \mathbb{R} : q^3 \leq 2\}$. We know that this set is not empty, because for instance $0$ and $1$ are clearly in the set. We also know the set has an upper bound, because $2^3 = 8 > 2$. 
+
+\medskip
+Now let's find the least upper bound $a = $ sup($S$). By the continuity axiom, $a$ exists. %next do the no < > and only =%
 
 \item
 Show that each of the following sequences $(a_n)_{n=1}^\infty$ converges to $0$:
