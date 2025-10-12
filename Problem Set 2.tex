@@ -44,7 +44,7 @@ This set will have a maximum at $n = 1$, but has no minimum. The set itself conv
 Suppose that $S$ and $T$ are nonempty subsets of $\mathbb{R}$ which are bounded above. Prove that $S \cup T$ is bounded above and $\sup (S\cup T) = \max(\sup S, \, \sup T)$.
 
 \bigskip
-\textbf{Proof: } First prove that $S \cup T$ is bounded above. If $S$ and $T$ are both bounded above, then suprema $sup(S) \in S$ and $sup(T) \in T$ both exist. Because they each exist in $S$ and $T$ respectively, both suprema exist in $S \cup T$. Call the max(sup($S$), sup($T$)) $B$. 
+\textbf{Proof: } First prove that $S \cup T$ is bounded above. If $S$ and $T$ are both bounded above, then suprema $sup(S)$ and $sup(T)$ both exist. Because they each exist for $S$ and $T$ respectively, both suprema exist for $S \cup T$. Call the max(sup($S$), sup($T$)) $B$. 
 
 \medskip
 Now consider a number $x \in S\cup T$. If $x \in S$, then $x \leq $ sup($S$) $\leq B$. If $x \in T$, then $x \leq $ sup($T$) $\leq B$. In any case, we see that $x \leq B$, so $B$ is an upper bound of $S\cup T$. 
@@ -61,19 +61,72 @@ Prove that there exists a unique real number $a$ such that $a^3 = 2$.
 \textbf{Proof: } Let $S$ be the set $\{q \in \mathbb{R} : q^3 \leq 2\}$. We know that this set is not empty, because for instance $0$ and $1$ are clearly in the set. We also know the set has an upper bound, because $2^3 = 8 > 2$. 
 
 \medskip
-Now let's find the least upper bound $a = $ sup($S$). By the continuity axiom, $a$ exists. %next do the no < > and only =%
+Now let's find the least upper bound $a = $ sup($S$). By the continuity axiom, $a$ exists. We will show that $a^3 = 2$ by showing that $a^3 < 2$ and $a^3>2$ create contradictions. 
+
+First examine the case that $a^3 < 2$. Then, there exists an $\epsilon $ such that $ (a+ \epsilon)^3 < 2$, which creates a contradiction with the idea that $a$ is a supremum of $S$. 
+
+Next examine the case that $a^3 > 2$. Then, there exists an $\epsilon $ such that $ (a- \epsilon)^3 < 2$, which creates a contradiction with the idea that $a$ is a supremum of $S$.  Thus, because $a^3$ cannot be greater or less than $2$, we know that $a^3 = 2$, so there exists a real number such that $a^3 = 2$. This number is also unique because $a^3$ increases monotonically. 
+
+\rightline{$\Box$}
+
 
 \item
 Show that each of the following sequences $(a_n)_{n=1}^\infty$ converges to $0$:
 \begin{itemize}
 \item[(a)] $\frac{n+1}{n^2 + 1}$;
+
+\medskip
+Note that it is impossible for $\frac{n+1}{n^2 + 1}$ to be less than $0$, because no negative number can ever enter the fraction. Also note that it is monotonically decreasing because $n^2$ grows faster than $n$ and the sequence is proportional to $\frac{n}{n^2}$. Thus, the sequence is bounded and has a limit $A = lim_{n\rightarrow \infty}(\frac{n+1}{n^2 + 1})$.
+
+Now let's use the squeeze theorem. We know that
+\[\frac{n+1}{n^2+1} \leq \frac{n+1}{n^2} \]
+because $n^2+1 \geq n^2$. Now do some algebra on the upper bound:
+\[ \frac{n+1}{n^2}  = \frac{n}{n^2} + \frac{1}{n^2} =  \frac{1}{n} + \frac{1}{n^2} \leq \frac{1}{n}+\frac{1}{n} = \frac{2}{n}\]
+We know that $\frac{2}{n} \rightarrow 0$ as $n \rightarrow \infty$, so by squeeze theorem $A = 0$.
+
+\rightline{$\Box$}
+
 \item[(b)] $2^{-n} \sin(n^3)$;
+
+\medskip
+We can again apply the squeeze theorem. We know that $-1 \leq sin(n^3) \leq 1$, and that $2^{-n} = \frac{1}{2^n} \leq \frac{1}{n}$. Thus, we can assert that 
+\[-\frac{1}{n} \leq 2^{-n} \sin(n^3) \leq \frac{1}{n} \]
+Because both $-\frac{1}{n}$ and $\frac{1}{n}$ converge to $0$, by squeeze theorem so does $2^{-n} \sin(n^3)$.
+
+\rightline{$\Box$}
+
 \item[(c)] $\sqrt{n} - \sqrt{n-1}$.
+
+\medskip
+We know that $\sqrt{n} - \sqrt{n-1}$ cannot be less than $0$ because $\sqrt{n-1} < \sqrt{n}$ for all $n\in\mathbb{N}$, and the square root function never outputs a negative number. 
+
+Next, we can find some $n$ such that $|a_n - A| < \epsilon $ (we can disregard the absolute value because this expression is always positive):
+\[a_n - 0 < \epsilon \Rightarrow \sqrt{n} - \sqrt{n-1} < \epsilon \]
+Now multiply both sides by the conjugate (which is always positive):
+\[n-(n-1) < \epsilon(\sqrt{n} + \sqrt{n-1} )\]
+\[ 1 < \epsilon(\sqrt{n} + \sqrt{n-1} )\]
+\[\frac{1}{\sqrt{n} + \sqrt{n-1} } < \epsilon\]
+Take the reciprocal and switch the inequality sign:
+\[ \sqrt{n} + \sqrt{n-1}  > \frac{1}{\epsilon}\]
+Notice that $\sqrt{n} < \sqrt{n}+\sqrt{n+1}  $, so if we find an $n$ such that:
+\[ \sqrt{n}  > \frac{1}{\epsilon}\]
+then that $n$ also works out for 
+\[ \sqrt{n} + \sqrt{n-1}  > \frac{1}{\epsilon}\] 
+Thus, we know that 
+\[ n = \frac{1}{\epsilon^2} \]
+Satisfies $n$ such that $|a_n - A| < \epsilon $, where $A = 0$. 
+
+\rightline{$\Box$}
+
+
+
 \end{itemize}
 
 
 \item
 Prove or disprove that if $(a_n)_{n=1}^\infty$ is a sequence such that the subsequence $(a_{kn})_{n=1}^\infty$ converges for each $k = 2, 3, \dots$, then $(a_n)_{n=1}^\infty$ also converges.
+
+Consider a sequence $(a_n)_{n=1}^\infty$, where for every prime $n$, $a_n = C$. For humor's sake, let the constant $C = 67$.  For every other $n$, $a_n = \frac{1}{n}$. Then, this function would be a counterexample to the statement in the question. This sequence will not converge because there are infinite primes, so it will be impossible to find an $N$ where all $n>N$ satisfies $|a_n - A| < \epsilon $ for any $\epsilon$. However, because $a_kn$ for $k \geq2$ will never include the prime-indexed numbers in the sequence, all $a_kn$ will converge like $\frac{1}{n}$.
 
 \end{enumerate}
 
