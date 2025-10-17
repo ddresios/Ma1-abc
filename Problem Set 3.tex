@@ -1,0 +1,56 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsfonts,amsmath,amssymb,latexsym,color,epsfig}
+\setlength{\textheight}{22.5cm} \setlength{\textwidth}{6.7in}
+\setlength{\topmargin}{0pt} \setlength{\evensidemargin}{1pt}
+\setlength{\oddsidemargin}{1pt} \setlength{\headsep}{10pt}
+\setlength{\parskip}{1mm} \setlength{\parindent}{0mm}
+\renewcommand{\baselinestretch}{1.03}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{conjecture}{Conjecture}
+\newenvironment{proof}[1]
+      {\medskip\noindent{\bf Proof #1}\hspace{1mm}}
+      {\hfill$\Box$\medskip}
+
+
+\title{\vspace{-0.7cm}Ma 1A - Problem Set 3}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+
+\item
+Show that $\sum_{k=1}^\infty k x^k$ exists for $|x| < 1$ and determine its value.
+
+\item
+For each of the following choices of $a_k$, use the indicated test to establish whether or not $\sum a_k$ converges:
+\begin{itemize}
+\item[(a)] $\frac{(2k+1)(3k+1)}{(k+1)(k+3)^2}$; \hfill (Limit Comparison Test)
+\item[(b)] $\frac{k!}{k^k}$; \hfill (Ratio Test)
+\item[(c)] $2^{-k} k$ if $k$ is of the form $2^m$ and $0$ otherwise. \hfill (Ratio Test)
+\end{itemize}
+
+\item
+Show that $\sum_{k \geq 2} \frac{1}{k \log_2 k}$ diverges.
+
+
+\item
+For each of the following choices of $a_k$, determine whether or not $\sum a_k$ converges and state clearly what test you are using:
+\begin{itemize}
+\item[(a)] $\frac{k+2^k}{k 2^k}$;
+\item[(b)] $\frac{2^k}{k^{k/2}}$; 
+\item[(c)] $\frac{(-1)^k}{\sqrt{k}}$.
+\end{itemize}
+
+\item
+Determine the radius of convergence for the power series 
+\[S(x) = \sum_{n=1}^\infty \frac{x^{2n+1}}{3^n (n+1)}.\]
+
+\end{enumerate}
+
+
+\end{document}
