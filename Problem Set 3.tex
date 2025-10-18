@@ -26,12 +26,77 @@
 \item
 Show that $\sum_{k=1}^\infty k x^k$ exists for $|x| < 1$ and determine its value.
 
+The overall strategy here is to find an expression for the partial sum of the first $k$ terms $S_k$, and then take the limit of that expression as $k \rightarrow \infty$. 
+
+\medskip
+
+\[S_k = x = 2x^2 = 3x^3 + ... + kx^k \]
+Multiply that partial sum by $x$:
+\[xS_K = x^2 + 2x^3 + 3x^4 +... + (k-1)x^k + kx^{k+1} \]
+Subtract:
+\begin{flalign*}
+      S_k - xS_K &= x + x^2 + x^3 +...+ x^k - kx^{k+1} \\
+      S_k(1-x) &= \frac{1-x^k}{1-x}-kx^{k+1} \\
+      &=\frac{1-x^k}{1-x} - \frac{kx^{k+1}(1-x)}{1-x} \\
+      &=\frac{1-x^k -kx^{k+1}-kx^{k+2}}{1-x} \\
+      S_k &= \frac{1-x^k -kx^{k+1}-kx^{k+2}}{(1-x)^2}\\
+      \lim_{k\rightarrow\infty} S_k &= \frac{1-0-0-0}{(1-x)^2}
+\end{flalign*}
+Thus we see that $\sum_{k=1}^\infty k x^k$ exists for $|x|<0$, and that this sum is $\frac{1}{(1-x)^2}$.
 \item
 For each of the following choices of $a_k$, use the indicated test to establish whether or not $\sum a_k$ converges:
 \begin{itemize}
 \item[(a)] $\frac{(2k+1)(3k+1)}{(k+1)(k+3)^2}$; \hfill (Limit Comparison Test)
-\item[(b)] $\frac{k!}{k^k}$; \hfill (Ratio Test)
+
+\bigskip First expand out the fraction: 
+\[ \frac{k+2^k}{k 2^k} = \frac{6k^2+5k+1}{k^3+k^2+15k+9}\]
+Now compare the limit of this fraction with $\frac{1}{n}$, which is a harmonic series and known to converge:
+\begin{flalign*}
+     & \lim_{k\rightarrow\infty} \frac{6k^2+5k+1}{k^3+k^2+15k+9} \cdot \frac{k}{1} \\
+     =& \lim_{k\rightarrow\infty} \frac{6k^3+5k^2+k}{k^3+k^2+15k+9} \\
+     =&  \,\, 6
+\end{flalign*}
+Because the result of this limit comparison is a constant, the two series are comparable, and because the series we compared to diverges so does the series in question. 
+
+\item[(b)] $\frac{k!}{k^k}$; \hfill (Root Test)
+
+\bigskip
+The root test will have us take the following limit:
+
+\begin{flalign*}
+      & \lim_{k\rightarrow\infty} \sqrt[k]{|\frac{k!}{k^k}|} \\
+      =& \lim_{k\rightarrow\infty} \sqrt[k]{\frac{k!}{k^k}} \\
+\end{flalign*}
+We can show that the fraction inside the radical is $<1$ for all $k > 0$: 
+\[k! = 1 \times 2 \times 3 ... \times k \]
+\[k^k = k \times k \times k ... \times k \]
+Note that the number of terms in each expression is the same, $k$. 
+Then, 
+\[\frac{k!}{k^k} = \frac{1}{k} \times \frac{2}{k} ... \times \frac{k}{k} \]
+Because $k$ is the highest number in the radical series, we know that each of these fractions is less than $1$, except for the last $\frac{k}{k}$ which equals one. So, we can say that 
+\[\frac{k!}{k^k} < 1\]
+
+For any $k$ terms, and therefore 
+\[ \lim_{k\rightarrow\infty} \sqrt[k]{\frac{k!}{k^k}} < \lim_{k\rightarrow\infty} \sqrt[k]{1}  < 1\]
+Thus our series is absolutely convergent. 
 \item[(c)] $2^{-k} k$ if $k$ is of the form $2^m$ and $0$ otherwise. \hfill (Ratio Test)
+
+\bigskip 
+First write out our series in a better form:
+\[2^{-(2^m)}2^m \]
+Now apply the ratio test: 
+\begin{flalign*}
+      &\lim_{m \rightarrow \infty} |\frac{2^{-(2^{(m+1)})}2^{m+1}}{2^{-(2^m)}2^m}|\\
+      =&\lim_{m \rightarrow \infty} |\frac{2^{2^{m}}2^{m+1}}{2^{2^{m+1}}2^m} |\\
+      =& \lim_{m \rightarrow \infty} |\frac{2^{2^{m}}2^{m}2}{2^{2^{m+1}}2^m} |\\
+      =& \lim_{m \rightarrow \infty} |\frac{2^{2^{m}}2}{2^{2^{m+1}}} |\\
+      =& \lim_{m \rightarrow \infty} |2 \cdot 2^{2^m}2^{-2^{m}2} |\\
+      =& \lim_{m \rightarrow \infty} |2 \cdot 2^{2^m}2^{-2^{m}2} |\\
+      =& \lim_{m \rightarrow \infty} |2 \cdot 2^{-2^m} |\\
+      =& 0
+\end{flalign*}
+Because the ratio test yeilds $L = 0$, the series converges. 
+
 \end{itemize}
 
 \item
